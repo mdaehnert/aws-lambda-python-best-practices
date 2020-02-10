@@ -1,0 +1,15 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[packages]
+
+# Please update to LATEST for new projects
+[dev-packages]
+pytest      = "==5.3.5"
+boto3-stubs = {extras = ["s3"], version = "==1.11.11.0"}
+mypy        = "==0.761"
+
+[requires]
+python_version = "3.8"

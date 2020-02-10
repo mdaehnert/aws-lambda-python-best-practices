@@ -1,0 +1,37 @@
+#
+# Any code, applications, scripts, templates, proofs of concept, documentation
+# and other items provided by AWS under this SOW are "AWS Content," as defined
+# in the Agreement, and are provided for illustration purposes only. All such
+# AWS Content is provided solely at the option of AWS, and is subject to the
+# terms of the Addendum and the Agreement. Customer is solely responsible for
+# using, deploying, testing, and supporting any code and applications provided
+# by AWS under this SOW
+#
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+Description: Lambda setup to show if local development is running on AWS as well.
+
+
+Globals:
+  Function:
+    Runtime: python3.8
+    Timeout: 600
+    MemorySize: 1024
+
+
+Resources:
+  Lambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: app.index.handler
+      CodeUri: ./lambda/src
+      Description: Test as clean code example.
+      Environment:
+        Variables:
+          LOG_LEVEL: DEBUG
+      Policies:
+      - Statement:
+        - Effect: Allow
+          Action:
+          - s3:List*
+          Resource: '*'

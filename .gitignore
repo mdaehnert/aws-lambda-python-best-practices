@@ -1,0 +1,8 @@
+.DS_Store
+__pycache__/
+.venv/
+.pytest_cache/
+.mypy_cache/
+
+.packaged-template.yml
+.local-deployment.sh

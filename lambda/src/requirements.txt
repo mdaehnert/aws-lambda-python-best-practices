@@ -1,0 +1,2 @@
+# AWS Lambda requires this file for Lambda deployments.
+# Please update it manually, if additional dependencies for deployment are named inside Pipfile.
